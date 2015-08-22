@@ -9,9 +9,16 @@
  */
 angular.module('mytodoApp')
 	.controller('MainCtrl', function($scope) {
-		$scope.awesomeThings = [
-			'HTML5 Boilerplate',
-			'AngularJS',
-			'Karma'
-		];
+		$scope.todos = ['Item 1', 'Item 2', 'Item 3'];
+
+		/* add a TODO */
+		$scope.addTodo = function() {
+			$scope.todos.push($scope.todo);
+			$scope.todo = '';
+		};
+
+		/* remove a TODO */
+		$scope.removeTodo = function(index) {
+			$scope.todos.splice(index, 1);
+		};
 	});
