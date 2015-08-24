@@ -9,7 +9,9 @@
  */
 angular.module('mytodoApp')
 	.controller('MainCtrl', function($scope) {
-		$scope.todos = ['Item 1', 'Item 2', 'Item 3'];
+
+		/* set empty TODOS object */
+		$scope.todos = [];
 
 		/* add a TODO */
 		$scope.addTodo = function() {
