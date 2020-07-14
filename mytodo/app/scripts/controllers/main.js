@@ -8,7 +8,7 @@
  * Controller of the mytodoApp
  */
 angular.module('mytodoApp')
-	.controller('MainCtrl', function($scope, localStorageService) {
+	.controller('MainCtrl', function ($scope, localStorageService) {
 
 		/* set storage object from TODOS in local storage */
 		var todosInStore = localStorageService.get('todos');
@@ -17,18 +17,18 @@ angular.module('mytodoApp')
 		$scope.todos = todosInStore || [];
 
 		/* watch for changes in TODOS object and pass back to local storage */
-		$scope.$watch('todos', function() {
+		$scope.$watch('todos', function () {
 			localStorageService.set('todos', $scope.todos);
 		}, true);
 
 		/* add a TODO */
-		$scope.addTodo = function() {
+		$scope.addTodo = function () {
 			$scope.todos.push($scope.todo);
 			$scope.todo = '';
 		};
 
 		/* remove a TODO */
-		$scope.removeTodo = function(index) {
+		$scope.removeTodo = function (index) {
 			$scope.todos.splice(index, 1);
 		};
 	});
